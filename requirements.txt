@@ -1,0 +1,95 @@
+# Ring to 3D Pipeline Requirements
+# =================================
+# This file contains all dependencies needed for the pipeline.
+# Install with: pip install -r requirements.txt
+#
+# Note: Some packages require CUDA support for GPU acceleration.
+# For GPU support, ensure you have the appropriate CUDA version installed.
+
+# Core dependencies
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.24.0
+Pillow>=9.5.0
+opencv-python>=4.8.0
+scipy>=1.10.0
+
+# Image Generation (Stable Diffusion)
+diffusers>=0.21.0
+transformers>=4.30.0
+accelerate>=0.20.0
+
+# Segmentation (Grounded-SAM)
+# For Grounding DINO from HuggingFace:
+# transformers already included above
+
+# For local Grounding DINO installation (optional):
+# Requires git: git clone https://github.com/IDEA-Research/GroundingDINO.git
+# pip install -e GroundingDINO
+
+# For Segment Anything - install separately if you have git:
+# pip install git+https://github.com/facebookresearch/segment-anything.git
+# Or download manually from: https://github.com/facebookresearch/segment-anything
+# The pipeline will work with fallback segmentation if SAM is not installed
+
+# Depth Estimation (Metric3D)
+# Metric3D is loaded via torch.hub
+# Alternatively, clone: https://github.com/YvanYin/Metric3D
+
+# Point Cloud Processing
+point-cloud-utils>=0.30.0
+open3d>=0.17.0
+
+# Mesh Processing and Export
+trimesh>=3.22.0
+pyglet<2  # Required by trimesh for visualization
+
+# Optional: CAD format support
+# For STEP/IGES export (requires conda):
+# conda install -c conda-forge pythonocc-core
+
+# For Rhino 3DM export:
+rhino3dm>=8.0.0
+
+# Utilities
+tqdm>=4.65.0
+matplotlib>=3.7.0
+pyyaml>=6.0
+
+# Optional: ControlNet for advanced image generation
+# Uncomment if you want ControlNet support:
+# controlnet-aux>=0.0.6
+
+# Development dependencies (optional)
+# pytest>=7.3.0
+# black>=23.3.0
+# isort>=5.12.0
+
+
+# ============================================
+# INSTALLATION NOTES
+# ============================================
+#
+# 1. Create a virtual environment:
+#    python -m venv venv
+#    venv\Scripts\activate  (Windows)
+#    source venv/bin/activate  (Linux/Mac)
+#
+# 2. Install PyTorch with CUDA (recommended):
+#    pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+#
+# 3. Install this requirements file:
+#    pip install -r requirements.txt
+#
+# 4. Download model checkpoints:
+#    - SAM: wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth
+#    - Grounding DINO: wget https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha/groundingdino_swint_ogc.pth
+#
+# 5. For Grounded-SAM (optional full installation):
+#    git clone https://github.com/IDEA-Research/Grounded-Segment-Anything.git
+#    cd Grounded-Segment-Anything
+#    pip install -e segment_anything
+#    pip install --no-build-isolation -e GroundingDINO
+#
+# 6. For STEP export (optional):
+#    conda install -c conda-forge pythonocc-core
