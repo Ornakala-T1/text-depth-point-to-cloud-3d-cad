@@ -65,3 +65,74 @@
 2025-12-13 13:00:53 - INFO - ==================================================
 2025-12-13 13:00:53 - INFO - Pipeline completed successfully!
 2025-12-13 13:00:53 - INFO - All outputs saved to: output\20251213_130042
+2025-12-14 22:41:22 - INFO - Initializing pipeline components...
+2025-12-14 22:41:22 - INFO - Pipeline initialized successfully!
+2025-12-14 22:41:22 - INFO - ==================================================
+2025-12-14 22:41:22 - INFO - Step 1: Using existing image...
+2025-12-14 22:41:22 - INFO - Source: image_source/sample_1.png
+2025-12-14 22:41:22 - INFO - Image saved to: output\20251214_rerun\01_input_image.png
+2025-12-14 22:41:22 - INFO - ==================================================
+2025-12-14 22:41:22 - INFO - Step 2: Segmenting ring components...
+2025-12-14 22:41:55 - INFO - Segmented 3 components
+2025-12-14 22:41:55 - INFO - ==================================================
+2025-12-14 22:41:55 - INFO - Step 3: Estimating depth map...
+2025-12-14 22:42:06 - INFO - Depth map saved to: output\20251214_rerun\03_depth_map.png
+2025-12-14 22:42:06 - INFO - ==================================================
+2025-12-14 22:42:06 - INFO - Step 4: Converting depth map to point cloud...
+2025-12-14 22:42:07 - INFO - Generated 3 point clouds
+2025-12-14 22:42:07 - INFO - ==================================================
+2025-12-14 22:42:07 - INFO - Step 5: Processing point clouds...
+2025-12-14 22:42:07 - ERROR - Pipeline failed with error: [Open3D Error] (void __cdecl open3d::geometry::PointCloud::OrientNormalsConsistentTangentPlane(unsigned __int64,const double,const double)) D:\a\Open3D\Open3D\cpp\open3d\geometry\EstimateNormals.cpp:368: No normals in the PointCloud. Call EstimateNormals() first.
+
+2025-12-14 22:42:54 - INFO - Initializing pipeline components...
+2025-12-14 22:42:54 - INFO - Pipeline initialized successfully!
+2025-12-14 22:42:54 - INFO - ==================================================
+2025-12-14 22:42:54 - INFO - Step 1: Using existing image...
+2025-12-14 22:42:54 - INFO - Source: image_source/sample_1.png
+2025-12-14 22:42:54 - INFO - Image saved to: output\20251214_rerun\01_input_image.png
+2025-12-14 22:42:54 - INFO - ==================================================
+2025-12-14 22:42:54 - INFO - Step 2: Segmenting ring components...
+2025-12-14 22:43:10 - INFO - Segmented 3 components
+2025-12-14 22:43:10 - INFO - ==================================================
+2025-12-14 22:43:10 - INFO - Step 3: Estimating depth map...
+2025-12-14 22:43:15 - INFO - Depth map saved to: output\20251214_rerun\03_depth_map.png
+2025-12-14 22:43:15 - INFO - ==================================================
+2025-12-14 22:43:15 - INFO - Step 4: Converting depth map to point cloud...
+2025-12-14 22:43:15 - INFO - Generated 3 point clouds
+2025-12-14 22:43:15 - INFO - ==================================================
+2025-12-14 22:43:15 - INFO - Step 5: Processing point clouds...
+2025-12-14 22:43:16 - INFO - ==================================================
+2025-12-14 22:43:16 - INFO - Step 6: Reconstructing meshes...
+2025-12-14 22:43:16 - INFO - Reconstructed 0 meshes
+2025-12-14 22:43:16 - INFO - ==================================================
+2025-12-14 22:43:16 - INFO - Step 7: Exporting to manufacturing formats...
+2025-12-14 22:43:16 - INFO - Exported to: output\20251214_rerun\07_exports
+2025-12-14 22:43:16 - INFO - ==================================================
+2025-12-14 22:43:16 - INFO - Pipeline completed successfully!
+2025-12-14 22:43:16 - INFO - All outputs saved to: output\20251214_rerun
+2025-12-14 22:51:09 - INFO - Initializing pipeline components...
+2025-12-14 22:51:09 - INFO - Pipeline initialized successfully!
+2025-12-14 22:51:09 - INFO - ==================================================
+2025-12-14 22:51:09 - INFO - Step 1: Using existing image...
+2025-12-14 22:51:09 - INFO - Source: image_source/sample_1.png
+2025-12-14 22:51:09 - INFO - Image saved to: output\20251214_rerun_v2\01_input_image.png
+2025-12-14 22:51:09 - INFO - ==================================================
+2025-12-14 22:51:09 - INFO - Step 2: Segmenting ring components...
+2025-12-14 22:51:27 - INFO - Segmented 3 components
+2025-12-14 22:51:27 - INFO - ==================================================
+2025-12-14 22:51:27 - INFO - Step 3: Estimating depth map...
+2025-12-14 22:51:30 - INFO - Depth map saved to: output\20251214_rerun_v2\03_depth_map.png
+2025-12-14 22:51:30 - INFO - ==================================================
+2025-12-14 22:51:30 - INFO - Step 4: Converting depth map to point cloud...
+2025-12-14 22:51:30 - INFO - Generated 3 point clouds
+2025-12-14 22:51:30 - INFO - ==================================================
+2025-12-14 22:51:30 - INFO - Step 5: Processing point clouds...
+2025-12-14 22:51:31 - INFO - ==================================================
+2025-12-14 22:51:31 - INFO - Step 6: Reconstructing meshes...
+2025-12-14 22:51:31 - INFO - Reconstructed 2 meshes
+2025-12-14 22:51:31 - INFO - ==================================================
+2025-12-14 22:51:31 - INFO - Step 7: Exporting to manufacturing formats...
+2025-12-14 22:51:32 - INFO - Exported to: output\20251214_rerun_v2\07_exports
+2025-12-14 22:51:32 - INFO - ==================================================
+2025-12-14 22:51:32 - INFO - Pipeline completed successfully!
+2025-12-14 22:51:32 - INFO - All outputs saved to: output\20251214_rerun_v2

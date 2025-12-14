@@ -226,14 +226,28 @@ class DepthEstimator:
                 align_corners=False,
             ).squeeze()
         
-        depth_map = prediction.cpu().numpy()
+        disparity = prediction.cpu().numpy()
         
-        # MiDaS outputs inverse depth, convert to depth
-        depth_map = 1.0 / (depth_map + 1e-6)
+        # MiDaS outputs disparity (inverse depth)
+        # Higher disparity = closer to camera = smaller depth
+        # We invert and normalize to get relative depth
         
-        # Normalize to reasonable range
-        depth_map = (depth_map - depth_map.min()) / (depth_map.max() - depth_map.min() + 1e-6)
-        depth_map = depth_map * 10  # Scale to ~10 units max
+        # Clip negative values (can occur at image boundaries)
+        disparity = np.clip(disparity, 0, None)
+        
+        # Invert: high disparity -> low depth (close), low disparity -> high depth (far)
+        # Add small epsilon to avoid division by zero
+        max_disp = disparity.max()
+        if max_disp > 0:
+            # Normalize disparity to 0-1, then invert
+            norm_disp = disparity / max_disp
+            # Invert so that close objects have smaller depth values
+            depth_map = 1.0 - norm_disp
+        else:
+            depth_map = np.zeros_like(disparity)
+        
+        # Scale to reasonable range (0-10 units)
+        depth_map = depth_map * 10
         
         return depth_map
     

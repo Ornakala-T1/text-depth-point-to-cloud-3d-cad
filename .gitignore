@@ -1,0 +1,30 @@
+# Virtual environments
+.venv/
+.venv312/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Model cache
+.cache/
+torch_hub/
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs (keep pipeline.log for history)
+*.log.bak
+
+# Temporary files
+*.tmp
+*.temp

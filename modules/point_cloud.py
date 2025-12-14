@@ -254,12 +254,17 @@ class PointCloudProcessor:
                     pcd.colors = o3d.utility.Vector3dVector(colors)
                 
                 # Estimate normals (needed for mesh reconstruction)
-                pcd.estimate_normals(
-                    search_param=o3d.geometry.KDTreeSearchParamHybrid(
-                        radius=0.1, max_nn=30
-                    )
-                )
-                pcd.orient_normals_consistent_tangent_plane(k=15)
+                if len(points) > 10:
+                    try:
+                        pcd.estimate_normals(
+                            search_param=o3d.geometry.KDTreeSearchParamHybrid(
+                                radius=0.1, max_nn=30
+                            )
+                        )
+                        if pcd.has_normals():
+                            pcd.orient_normals_consistent_tangent_plane(k=min(15, len(points)-1))
+                    except Exception as e:
+                        print(f"    Warning: Could not estimate normals: {e}")
                 
                 o3d.io.write_point_cloud(str(ply_path), pcd)
             else:
